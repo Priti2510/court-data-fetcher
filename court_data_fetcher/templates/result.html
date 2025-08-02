@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Details</title>
+</head>
+<body>
+    <h2>📄 Case Details</h2>
+    <ul>
+        <li><strong>Parties:</strong> {{ result['Parties'] }}</li>
+        <li><strong>Filing Date:</strong> {{ result['Filing Date'] }}</li>
+        <li><strong>Next Hearing:</strong> {{ result['Next Hearing'] }}</li>
+        <li><strong>Order/Judgment PDF:</strong>
+            {% if result['PDF Link'] %}
+                <a href="{{ result['PDF Link'] }}" target="_blank">Download PDF</a>
+            {% else %}
+                Not Available
+            {% endif %}
+        </li>
+    </ul>
+    <a href="/">🔙 Back to Search</a>
+</body>
+</html>
